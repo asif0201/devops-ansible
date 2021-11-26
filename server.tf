@@ -1,15 +1,15 @@
 provider "aws" {
-region = "us-east-2"
+region = "ap-south-1"
 }
 resource "aws_instance" "myawsserver" {
-  ami = "ami-077e31c4939f6a2f3"
+  ami = "ami-0108d6a82a783b352"
   instance_type = "t2.small"
-  key_name = "gds-import"
+  key_name = "asif-import"
 
   tags = {
-    Name = "Gagan-devops-server-v2"
+    Name = "Asif-devops-server-v2"
     env = "production"
-    owner = "Gagandeep"
+    owner = "Asif Iqbal"
   }
   provisioner "local-exec" {
     command = "echo The servers IP address is ${self.public_ip} && echo ${self.public_ip} > /root/inv"
